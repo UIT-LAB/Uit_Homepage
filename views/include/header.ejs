@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>asdf</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <link rel='stylesheet' href='./stylesheets/main.css'/>
+    <script src="./javascript/main.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="progress">
+            <div id="navPersent" class="progress-bar bg-info" 
+                role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 0%; ">0%</div>
+        </div>
+        <nav style="width:70%" class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">Uit-Lab</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" role="button" onclick='
+                $.ajax({
+                    url: "/information", // 클라이언트가 요청을 보낼 서버의 URL 주소
+                    data: { name: "asdf" },                // HTTP 요청과 함께 서버로 보낼 데이터
+                    type: "GET",                             // HTTP 요청 방식(GET, POST)
+                    dataType: "html"                         // 서버에서 보내줄 데이터의 타입
+                }).done(function (data) {//성공
+                    $("section").html(data);
+                    window.scrollTo(0,0);
+                }).fail(function (xhr, status, errorThrown) {//실패
+                    $("#text").html("오류가 발생했습니다.<br>")
+                    .append("오류명: " + errorThrown + "<br>")
+                    .append("상태: " + status);
+                })
+              '>Information</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Member's
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/members">Member Info</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Todo List</a>
+                            <a class="dropdown-item" href="#">Schedule</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">CONATIVE</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <script>
+        $(document).ready(function () {
+            $('nav').animate({
+                width: '100%'
+            }, 500);
+        });
+        $(window).scroll(function () {
+            if ($(window).scrollTop() >= 70) {
+                $('header').last().addClass("fixed-top")
+            } else {
+                $('header').last().removeClass("fixed-top")
+            }
+            var scrollPersent = Math.floor(($(window).scrollTop() / ($(document).height() - $(window).height())) * 100) + "%";
+            $("#navPersent").css("width", scrollPersent);
+            $("#navPersent").text(scrollPersent);
+        });
+    </script>
+    <!-- 사진 자료실 -->
