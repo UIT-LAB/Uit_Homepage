@@ -1,0 +1,109 @@
+<% include ../include/header %>
+<link href='/schedule_packages/core/main.css' rel='stylesheet' />
+<link href='/schedule_packages/daygrid/main.css' rel='stylesheet' />
+<link href='/schedule_packages/timegrid/main.css' rel='stylesheet' />
+<link href='/schedule_packages/list/main.css' rel='stylesheet' />
+<script src='/schedule_packages/core/main.js'></script>
+<script src='/schedule_packages/interaction/main.js'></script>
+<script src='/schedule_packages/daygrid/main.js'></script>
+<script src='/schedule_packages/timegrid/main.js'></script>
+<script src='/schedule_packages/list/main.js'></script>
+
+<section >
+    <div class="secondSectionHeader">
+        <h1 id="info_Header" class="text-center">UIT - LAB</h1>
+        <h5 id="info_smallHeader" class="text-center">일정표</h5>
+    </div>
+    <div style="text-align: center;">
+        <div id='calendar' style="width:70%;text-align:center;display:inline-block; margin-bottom:5rem"></div>
+    </div>
+    
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+  
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay,listMonth'
+        },
+        //defaultDate: '2020-09-09',
+        navLinks: true, // can click day/week names to navigate views
+        businessHours: true, // display business hours
+        editable: true,
+        events: [
+        //   {
+        //     title: 'ddh',
+        //     start: '2020-09-03T13:00:00',
+        //     constraint: 'businessHours'
+        //   },
+          {
+            title: 'UIT-LAB Meeting',
+            start: '2020-09-11T11:00:00',
+            constraint: 'availableForMeeting', // defined below
+            color: '#257e4a'
+          },
+          {
+            title: 'UIT-LAB Meeting',
+            start: '2020-09-18T11:00:00',
+            constraint: 'availableForMeeting', // defined below
+            color: '#257e4a'
+          },
+          {
+            title: 'UIT-LAB Meeting',
+            start: '2020-09-25T11:00:00',
+            constraint: 'availableForMeeting', // defined below
+            color: '#257e4a'
+          },
+          {
+            title: 'Young Jae tal jue',
+            start: '2020-09-08',
+            //end: '2020-09-20'
+          },
+          {
+            title: 'Party',
+            start: '2020-09-29T20:00:00'
+          },
+  
+          // areas where "Meeting" must be dropped
+          {
+            groupId: 'availableForMeeting',
+            start: '2020-09-11T10:00:00',
+            end: '2020-09-11T16:00:00',
+            rendering: 'background'
+          },
+          {
+            groupId: 'availableForMeeting',
+            start: '2020-09-13T10:00:00',
+            end: '2020-09-13T16:00:00',
+            rendering: 'background'
+          },
+  
+          // red areas where no events can be dropped
+          {
+            start: '2020-09-24',
+            end: '2020-09-28',
+            overlap: false,
+            rendering: 'background',
+            color: '#ff9f89'
+          },
+          {
+            start: '2020-09-06',
+            end: '2020-09-08',
+            overlap: false,
+            rendering: 'background',
+            color: '#ff9f89'
+          }
+        ]
+      });
+  
+      calendar.render();
+    });
+  
+  </script>
+
+<% include ../include/footer %>

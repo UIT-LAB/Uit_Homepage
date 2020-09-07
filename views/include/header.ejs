@@ -13,8 +13,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-    <link rel='stylesheet' href='./stylesheets/main.css'/>
-    <script src="./javascript/main.js"></script>
+    <link rel='stylesheet' href='/stylesheets/main.css'/>
+    <script src="/javascript/main.js"></script>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
             <div id="navPersent" class="progress-bar bg-info" 
                 role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 0%; ">0%</div>
         </div>
-        <nav style="width:70%" class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="/">Uit-Lab</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,7 +58,7 @@
                             <a class="dropdown-item" href="/members">Member Info</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#">Todo List</a>
-                            <a class="dropdown-item" href="#">Schedule</a>
+                            <a class="dropdown-item" href="/members/schedule">Schedule</a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -73,13 +73,8 @@
         </nav>
     </header>
     <script>
-        $(document).ready(function () {
-            $('nav').animate({
-                width: '100%'
-            }, 500);
-        });
         $(window).scroll(function () {
-            if ($(window).scrollTop() >= 70) {
+            if ($(window).scrollTop() >= 1) {
                 $('header').last().addClass("fixed-top")
             } else {
                 $('header').last().removeClass("fixed-top")

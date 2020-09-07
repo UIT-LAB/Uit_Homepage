@@ -6,4 +6,7 @@ router.get('/', function(req, res, next) {//members info
     res.render('members/members_Index');
 });
 
+router.get('/schedule', function(req, res, next) {//members info
+    res.render('members/members_Schedule');
+});
 module.exports = router;
