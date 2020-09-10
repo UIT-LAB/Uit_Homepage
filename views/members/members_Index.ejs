@@ -4,59 +4,82 @@
         <h1 id="info_Header" class="text-center">UIT - LAB</h1>
         <h5 id="info_smallHeader" class="text-center">너무 자유로운 연구실</h5>
     </div>
-     
+
     <div id="info_content" class="m-4">
         <div class="container marketing">
             <!-- Three columns of text below the carousel -->
             <div class="row row-cols-1 row-cols-md-2">
-                <div class="col-lg-4 text-center">
-                    <img src="images/members/김민수.jpg" width="180" height="180" class="rounded-circle">
-                    <h2>김민수</h2>
-                    <p>담당분야 : Android, web</p>
-                    <p>한줄평 : 좀 침</p>
+                <%for (key in member) {%>
+                <div class="col-lg-4 text-center mb-3">
+                    <img src="images/members/<%=member[key].image%>" width="180" height="180" class="rounded-circle">
+                    <h2><%=member[key].name%></h2>
+                    <p>담당분야 : <%=member[key].field%></p>
+                    <button id="<%=member[key].uid%>" type="button" class="btn btn-secondary" data-toggle="modal"
+                        data-target="#detail_<%=member[key].uid%>">
+                        Detail >>
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="detail_<%=member[key].uid%>" tabindex="-1" role="dialog"
+                        aria-labelledby="detail_<%=member[key].uid%>" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <!-- Title -->
+                                    <h5 class="modal-title" id="exampleModalLabel"> <%=member[key].name%>'s Detail </h5>
+
+                                    <!-- X키 -->
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body ">
+                                    <img src="images/members/<%=member[key].image%>" width="180" height="180"
+                                        class="rounded-circle mb-3">
+                                    <table class="table table-hover" style="width: 100%">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" style="width: 20%">이름</th>
+                                                <th scope="col" ><%=member[key].name%></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">학번</th>
+                                                <td><%=member[key].snum%></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">담당 분야</th>
+                                                <td><%=member[key].field%></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">거주지</th>
+                                                <td><%=member[key].address%></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">입랩날짜</th>
+                                                <td><%=moment(member[key].come).format('YYYY-MM-DD')%></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">졸업날짜</th>
+                                                <td><%=moment(member[key].graduate).format('YYYY-MM-DD')%></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">한 마디 짓껄이기</th>
+                                                <td><%=member[key].note%></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-                <div class="col-lg-4 text-center">
-                    <img src="images/members/김득회.jpg" width="180" height="180" class="rounded-circle">
-                    <h2>김득회</h2>
-                    <p>담당분야 : Android</p>
-                    <p>한줄평 : 좀 침</p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <img src="images/members/김영재.jpg" width="180" height="180" class="rounded-circle">
-                    <h2>김영재</h2>
-                    <p>담당분야 : Web</p>
-                    <p>한줄평 : 좀 침</p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <img src="images/members/권순영.jpg" width="180" height="180" class="rounded-circle">
-                    <h2>권순영</h2>
-                    <p>담당분야 : Arduino</p>
-                    <p>한줄평 : 좀 침</p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <img src="images/members/이규환.jpg" width="180" height="180" class="rounded-circle">
-                    <h2>이규환</h2>
-                    <p>담당분야 : Web</p>
-                    <p>한줄평 : 좀 침</p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <img src="images/members/송준하.jpg" width="180" height="180" class="rounded-circle">
-                    <h2>송준하</h2>
-                    <p>담당분야 : Android</p>
-                    <p>한줄평 : 좀 침</p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <img src="images/members/정승원.jpg" width="180" height="180" class="rounded-circle">
-                    <h2>정승원</h2>
-                    <p>담당분야 : Web</p>
-                    <p>한줄평 : 좀 침</p>
-                </div>
-                <div class="col-lg-4 text-center">
-                    <img src="images/members/권회성.jpg" width="180" height="180" class="rounded-circle">
-                    <h2>권회성</h2>
-                    <p>담당분야 : Web</p>
-                    <p>한줄평 : 특별 게스트임</p>
-                </div>
+                <%}%>
             </div>
         </div>
         <hr>
