@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="fixed-top">
         <div class="progress">
             <div id="navPersent" class="progress-bar bg-info" 
                 role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 0%; ">0%</div>
@@ -74,11 +74,6 @@
     </header>
     <script>
         $(window).scroll(function () {
-            if ($(window).scrollTop() >= 1) {
-                $('header').last().addClass("fixed-top")
-            } else {
-                $('header').last().removeClass("fixed-top")
-            }
             var scrollPersent = Math.floor(($(window).scrollTop() / ($(document).height() - $(window).height())) * 100) + "%";
             $("#navPersent").css("width", scrollPersent);
             $("#navPersent").text(scrollPersent);

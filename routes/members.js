@@ -16,6 +16,11 @@ router.get("/", function (req, res, next) {
 
 router.get("/schedule", function (req, res, next) {
   //members info
-  res.render("members/members_Schedule");
+  db.query(`select * from ${process.env.scheduleTableName}`, function (error, db_value) {
+    if (error) {
+      throw error;
+    }
+    res.render("members/members_Schedule", { moment, schedule_val: db_value });
+  });
 });
 module.exports = router;

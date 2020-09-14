@@ -2,6 +2,9 @@
 
 .secondSectionHeader {
     font-family: "comic sans MS";
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-  }
+    margin-top: 15vh;
+    margin-bottom: 15vh;
+}
+section{
+  margin-top:4.5rem
+}

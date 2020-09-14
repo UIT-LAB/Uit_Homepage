@@ -88,4 +88,16 @@
             <h5 id="info_smallHeader" class="text-center">이제는 존재하지 않는 분...</h5>
         </div>
 </section>
+<script>
+    $('#info_Header').css("opacity", "0" );
+    $('#info_smallHeader').css("opacity", "0" );
+    $('#info_content').css("opacity", "0" );
+    $(document).ready(function () {
+        $('#info_Header').animate({ opacity: "1" }, 350, function(){
+            $('#info_smallHeader').animate({ opacity: "1" }, 350, function(){
+              $('#info_content').animate({ opacity: "1" }, 350);
+            });
+        });
+    })
+</script>
 <% include ../include/footer %>

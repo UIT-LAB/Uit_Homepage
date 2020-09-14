@@ -21,9 +21,17 @@
 </section>
 
 <script>
+  var schedule_values = [];
+    <%for (key in schedule_val) {%>
+         schedule_values.push({
+            title: '<%=schedule_val[key].title%>',
+            start: '<%=moment(schedule_val[key].start_date).format("YYYY-MM-DD hh:mm:ss")%>',
+            end: '<%=moment(schedule_val[key].end_date).format("YYYY-MM-DD hh:mm:ss")%>',
+            constraint: 'availableForMeeting', color: '#257e4a'
+          });
+    <%}%>
     document.addEventListener('DOMContentLoaded', function() {
       var calendarEl = document.getElementById('calendar');
-  
       var calendar = new FullCalendar.Calendar(calendarEl, {
         plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
         header: {
@@ -35,72 +43,8 @@
         navLinks: true, // can click day/week names to navigate views
         businessHours: true, // display business hours
         editable: true,
-        events: [
-        //   {
-        //     title: 'ddh',
-        //     start: '2020-09-03T13:00:00',
-        //     constraint: 'businessHours'
-        //   },
-          {
-            title: 'UIT-LAB Meeting',
-            start: '2020-09-11T11:00:00',
-            constraint: 'availableForMeeting', // defined below
-            color: '#257e4a'
-          },
-          {
-            title: 'UIT-LAB Meeting',
-            start: '2020-09-18T11:00:00',
-            constraint: 'availableForMeeting', // defined below
-            color: '#257e4a'
-          },
-          {
-            title: 'UIT-LAB Meeting',
-            start: '2020-09-25T11:00:00',
-            constraint: 'availableForMeeting', // defined below
-            color: '#257e4a'
-          },
-          {
-            title: 'Young Jae tal jue',
-            start: '2020-09-08',
-            //end: '2020-09-20'
-          },
-          {
-            title: 'Party',
-            start: '2020-09-29T20:00:00'
-          },
-  
-          // areas where "Meeting" must be dropped
-          {
-            groupId: 'availableForMeeting',
-            start: '2020-09-11T10:00:00',
-            end: '2020-09-11T16:00:00',
-            rendering: 'background'
-          },
-          {
-            groupId: 'availableForMeeting',
-            start: '2020-09-13T10:00:00',
-            end: '2020-09-13T16:00:00',
-            rendering: 'background'
-          },
-  
-          // red areas where no events can be dropped
-          {
-            start: '2020-09-24',
-            end: '2020-09-28',
-            overlap: false,
-            rendering: 'background',
-            color: '#ff9f89'
-          },
-          {
-            start: '2020-09-06',
-            end: '2020-09-08',
-            overlap: false,
-            rendering: 'background',
-            color: '#ff9f89'
-          }
-        ]
+        events: schedule_values
       });
-  
       calendar.render();
     });
   
