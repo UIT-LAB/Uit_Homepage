@@ -3,14 +3,23 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var helmet = require('helmet');
+const session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var informationRouter = require('./routes/info');
 var membersRouter = require('./routes/members');
-
+var loginRouter = require('./routes/login');
 var app = express();
 
+//Session
+app.use(session({
+  secret: '!#!#Conative#!#!',
+  resave: false,
+  saveUninitialized: true
+ }));
+ 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -25,6 +34,14 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/information', informationRouter);
 app.use('/members', membersRouter);
+app.use('/login', loginRouter);
+
+//HELMET
+app.use(helmet());
+app.disable('x-powered-by')
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

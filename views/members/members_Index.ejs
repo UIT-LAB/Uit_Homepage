@@ -2,7 +2,7 @@
 <section>
     <div class="secondSectionHeader">
         <h1 id="info_Header" class="text-center">UIT - LAB</h1>
-        <h5 id="info_smallHeader" class="text-center">너무 자유로운 연구실</h5>
+        <h5 id="info_smallHeader" class="text-center">자유로운 연구실</h5>
     </div>
 
     <div id="info_content" class="m-4">
@@ -43,7 +43,7 @@
                                                 <th scope="col" ><%=member[key].name%></th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody >
                                             <tr>
                                                 <th scope="row">학번</th>
                                                 <td><%=member[key].snum%></td>
@@ -65,7 +65,7 @@
                                                 <td><%=moment(member[key].graduate).format('YYYY-MM-DD')%></td>
                                             </tr>
                                             <tr>
-                                                <th scope="row">한 마디 짓껄이기</th>
+                                                <th scope="row">한 마디<br>짓껄이기</th>
                                                 <td><%=member[key].note%></td>
                                             </tr>
                                         </tbody>

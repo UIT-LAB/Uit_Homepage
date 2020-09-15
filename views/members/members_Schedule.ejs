@@ -17,7 +17,6 @@
     <div style="text-align: center;">
         <div id='calendar' style="width:70%;text-align:center;display:inline-block; margin-bottom:5rem"></div>
     </div>
-    
 </section>
 
 <script>
@@ -43,6 +42,7 @@
         navLinks: true, // can click day/week names to navigate views
         businessHours: true, // display business hours
         editable: true,
+        locale: 'ko',
         events: schedule_values
       });
       calendar.render();

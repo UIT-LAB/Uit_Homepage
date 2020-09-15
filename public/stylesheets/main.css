@@ -1,5 +1,16 @@
 ::-webkit-scrollbar {display:none;} 
 
+@font-face{
+  font-family: "Bazzi";
+  src: url("./Bazzi.ttf") format("truetype");
+  font-style:normal;
+  font-weight: normal;
+}
+
+section{
+  font-family: "Bazzi";
+}
+
 .secondSectionHeader {
     font-family: "comic sans MS";
     margin-top: 15vh;
@@ -8,3 +19,4 @@
 section{
   margin-top:4.5rem
 }
+

@@ -10,7 +10,7 @@ router.get("/", function (req, res, next) {
     if (error) {
       throw error;
     }
-    res.render("members/members_Index", { moment, member: db_value });
+    res.render("members/members_Index", { moment, user_id: req.session.user_id, member: db_value});
   });
 });
 
@@ -20,7 +20,7 @@ router.get("/schedule", function (req, res, next) {
     if (error) {
       throw error;
     }
-    res.render("members/members_Schedule", { moment, schedule_val: db_value });
+    res.render("members/members_Schedule", { moment, user_id: req.session.user_id, schedule_val: db_value });
   });
 });
 module.exports = router;
