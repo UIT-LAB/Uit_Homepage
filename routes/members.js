@@ -6,7 +6,7 @@ var router = express.Router();
 /* GET users listing. */
 router.get("/", function (req, res, next) {
   //members info
-  db.query(`select * from ${process.env.memberTableName}`, function (error, db_value) {
+  db.query(`select * from member`, function (error, db_value) {
     if (error) {
       throw error;
     }
@@ -16,7 +16,7 @@ router.get("/", function (req, res, next) {
 
 router.get("/schedule", function (req, res, next) {
   //members info
-  db.query(`select * from ${process.env.scheduleTableName}`, function (error, db_value) {
+  db.query(`select * from schedule`, function (error, db_value) {
     if (error) {
       throw error;
     }

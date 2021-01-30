@@ -13,7 +13,7 @@ router.post('/', function (req, res, next) {
     var bkfd2Password = require("pbkdf2-password");
     var hasher = bkfd2Password();
 
-    db.query(`select * from ${process.env.userTableName} where id="${req.body.id}"`, function (error, db_value) {
+    db.query(`select * from user where id="${req.body.id}"`, function (error, db_value) {
         if (error) {
             throw error;
         }

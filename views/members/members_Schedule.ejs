@@ -24,9 +24,18 @@
     <%for (key in schedule_val) {%>
          schedule_values.push({
             title: '<%=schedule_val[key].title%>',
-            start: '<%=moment(schedule_val[key].start_date).format("YYYY-MM-DD hh:mm:ss")%>',
-            end: '<%=moment(schedule_val[key].end_date).format("YYYY-MM-DD hh:mm:ss")%>',
-            constraint: 'availableForMeeting', color: '#257e4a'
+            start: '<%=moment(schedule_val[key].start_date).format("YYYY-MM-DD HH:mm:ss")%>',
+            end: '<%=moment(schedule_val[key].end_date).format("YYYY-MM-DD HH:mm:ss")%>',
+            constraint: 'availableForMeeting', 
+            <%if(schedule_val[key].importance == 0){%>
+              color: 'black'
+            <%}else if(schedule_val[key].importance == 1){%>
+              color: '#257e4a'
+            <%}else if(schedule_val[key].importance == 2){%>
+              color: 'blue'
+            <%}else if(schedule_val[key].importance == 3){%>
+              color: 'red'
+            <%}%>
           });
     <%}%>
     document.addEventListener('DOMContentLoaded', function() {
