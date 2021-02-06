@@ -23,4 +23,8 @@ router.get("/schedule", function (req, res, next) {
     res.render("members/members_Schedule", { moment, user_id: req.session.user_id, schedule_val: db_value });
   });
 });
+router.get('/timetable', function(req, res, next) {
+  res.render('timetable/timetable_Index', { user_id: req.session.user_id });
+});
+
 module.exports = router;
