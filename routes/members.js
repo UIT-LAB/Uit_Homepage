@@ -31,6 +31,7 @@ router.get('/task', function (req, res, next) {
 router.get('/pstp/:name', function (req, res, next) {
   res.render("members/members_pstp", { user_id: req.session.user_id });
 });
-
-
+router.get('/timetable', function(req, res, next) {
+  res.render('timetable/timetable_Index', { user_id: req.session.user_id });
+});
 module.exports = router;
