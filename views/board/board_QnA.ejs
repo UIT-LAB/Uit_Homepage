@@ -1,0 +1,24 @@
+<% include ../include/header %>
+<div class="progress">
+    <div id="navPersent" class="progress-bar bg-info" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+        style="width: 0%; ">0%</div>
+</div>
+<section>
+    <div class="secondSectionHeader">
+        <h1 id="info_Header" class="text-center">UIT - LAB</h1>
+        <h5 id="info_smallHeader" class="text-center">QnA 게시판</h5>
+</section>
+<script>
+
+    $('#info_Header').css("opacity", "0" );
+    $('#info_smallHeader').css("opacity", "0" );
+    $('#info_content').css("opacity", "0" );
+    $(document).ready(function () {
+        $('#info_Header').animate({ opacity: "1" }, 350, function(){
+            $('#info_smallHeader').animate({ opacity: "1" }, 350, function(){
+              $('#info_content').animate({ opacity: "1" }, 350);
+            });
+        });
+    })
+</script>
+<% include ../include/footer %>

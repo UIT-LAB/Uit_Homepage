@@ -11,6 +11,7 @@ var usersRouter = require('./routes/users');
 var informationRouter = require('./routes/info');
 var membersRouter = require('./routes/members');
 var loginRouter = require('./routes/login');
+var boardRouter = require('./routes/board');
 var app = express();
 
 //Session
@@ -35,6 +36,7 @@ app.use('/users', usersRouter);
 app.use('/information', informationRouter);
 app.use('/members', membersRouter);
 app.use('/login', loginRouter);
+app.use('/board',boardRouter);
 
 //HELMET
 app.use(helmet());
