@@ -14,4 +14,7 @@ router.get('/notice', function(req,res,next){
 router.get('/email', function(req,res,next){
     res.render("board/board_Email",{user_id: req.session.user_id});
 });
+router.get('/free/write', function(req,res,next){
+    res.render("board/free_board_Write",{user_id: req.session.user_id});
+});
 module.exports = router;
