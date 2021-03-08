@@ -1,0 +1,54 @@
+<% include ../include/header %>
+  <div class="progress">
+    <div id="navPersent" class="progress-bar bg-info" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+      style="width: 0%; ">0%</div>
+  </div>
+  <section>
+    <div class="secondSectionHeader">
+      <h1 id="info_Header" class="text-center">작성하기</h1>
+    </div>
+  </section>
+  <div id="info_Header" >
+  <article>
+		<div class="container" role="main">
+			<form name="form" id="form" role="form" method="post" action="${pageContext.request.contextPath}/board/saveBoard">
+				<div class="mb-3">
+					<label for="title">제목</label>
+					<input type="text" class="form-control" name="title" id="title" placeholder="제목을 입력해 주세요">
+				</div>
+				<div class="mb-3">
+					<label for="reg_id">작성자</label>
+					<input type="text" class="form-control" name="reg_id" id="reg_id" placeholder="이름을 입력해 주세요">
+				</div>
+				<div class="mb-3">
+					<label for="content">내용</label>
+					<textarea class="form-control" rows="5" name="content" id="content" placeholder="내용을 입력해 주세요" ></textarea>
+				</div>
+				<div class="mb-3">
+					<label for="tag">비밀번호</label>
+					<input type="password" class="form-control" name="password" id="password" placeholder="비밀번호를 입력해 주세요">
+				</div>
+			</form>
+			<div>
+				<button type="button" class="btn btn-outline-secondary" id="btnSave">저장</button>
+				<button type="button" class="btn btn-outline-secondary" id="btnList">목록</button>
+			</div>
+		</div>
+	</article>
+</div>
+  <script>
+
+    $('#info_Header').css("opacity", "0");
+    $('#info_smallHeader').css("opacity", "0");
+    $('#info_content').css("opacity", "0");
+    $(document).ready(function () {
+      $('#info_Header').animate({ opacity: "1" }, 350, function () {
+        $('#info_smallHeader').animate({ opacity: "1" }, 350, function () {
+          $('#info_content').animate({ opacity: "1" }, 350);
+        });
+      });
+    })
+  </script>
+  <br>
+  <br>
+<% include ../include/footer %>

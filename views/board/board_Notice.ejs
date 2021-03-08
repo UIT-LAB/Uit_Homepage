@@ -1,23 +1,75 @@
 <% include ../include/header %>
-<div class="progress">
+  <div class="progress">
     <div id="navPersent" class="progress-bar bg-info" role="progressbar" aria-valuemin="0" aria-valuemax="100"
-        style="width: 0%; ">0%</div>
-</div>
-<section>
+      style="width: 0%; ">0%</div>
+  </div>
+  <section>
     <div class="secondSectionHeader">
-        <h1 id="info_Header" class="text-center">UIT - LAB</h1>
-        <h5 id="info_smallHeader" class="text-center">공지 사항</h5>
-</section>
-<script>
-    $('#info_Header').css("opacity", "0" );
-    $('#info_smallHeader').css("opacity", "0" );
-    $('#info_content').css("opacity", "0" );
+      <h1 id="info_Header" class="text-center">UIT - LAB</h1>
+      <h5 id="info_smallHeader" class="text-center">공지 사항</h5>
+    </div>
+  </section>
+  <div class="row secondSectionHeader" id="info_content">
+    <div class="col-2 mx-left btn-group-vertical">
+      <a href="/board/notice" class="btn btn-outline-secondary active" type="button" id="style-btn">Notice Board</a>
+      <a href="/board/free" class="btn btn-outline-secondary" type="button" id="style-btn">Free Board</a>
+      <a href="/board/qna" class="btn btn-outline-secondary" type="button" id="style-btn">QnA Board</a>
+      <a href="/board/email" class="btn btn-outline-secondary" type="button" id="style-btn">Email Board</a>
+    </div>
+    <table class="table table-hover col-sm">
+      <thead>
+        <tr>
+          <th scope="col">번호</th>
+          <th scope="col">제목</th>
+          <th scope="col">작성자</th>
+          <th scope="col">등록일</th>
+          <th scope="col">조회수</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+      <div class="mx-auto btn-group" role="group" aria-label="First group">
+        <button type="button" class="btn btn-outline-secondary btn-sm">1</button>
+        <button type="button" class="btn btn-outline-secondary btn-sm">2</button>
+        <button type="button" class="btn btn-outline-secondary btn-sm">3</button>
+        <button type="button" class="btn btn-outline-secondary btn-sm">4</button>
+      </div>
+    </div>
+  </div>
+  <script>
+
+    $('#info_Header').css("opacity", "0");
+    $('#info_smallHeader').css("opacity", "0");
+    $('#info_content').css("opacity", "0");
     $(document).ready(function () {
-        $('#info_Header').animate({ opacity: "1" }, 350, function(){
-            $('#info_smallHeader').animate({ opacity: "1" }, 350, function(){
-              $('#info_content').animate({ opacity: "1" }, 350);
-            });
+      $('#info_Header').animate({ opacity: "1" }, 350, function () {
+        $('#info_smallHeader').animate({ opacity: "1" }, 350, function () {
+          $('#info_content').animate({ opacity: "1" }, 350);
         });
+      });
     })
-</script>
-<% include ../include/footer %>
+  </script>
+  <% include ../include/footer %>
