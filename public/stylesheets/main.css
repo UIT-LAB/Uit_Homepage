@@ -19,4 +19,28 @@ section{
 section{
   margin-top:4.5rem
 }
-
+#font_header{
+  font-family: 'Gaegu', cursive;
+  font-size: 64;
+}
+#font_info{
+  font-family: 'Gaegu', cursive;
+  font-size: 32;
+}
+.row_sizes{
+  width: 100%;
+  display: flex;
+}
+.left {
+  width: 20%;
+  float: left;
+  box-sizing: border-box;
+}
+.right {
+  width: 80%;
+  float: right;
+  box-sizing: border-box;
+}
+.board_container{
+  width: 100%;
+}
