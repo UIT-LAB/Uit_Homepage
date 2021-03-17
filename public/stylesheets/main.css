@@ -44,3 +44,37 @@ section{
 .board_container{
   width: 100%;
 }
+
+/* .tab_container{
+  width: "500px";
+  margin: 20pxs auto;
+}
+.tab-title{
+  padding-left:-2rem;
+}
+.tab_title li{
+  list-style: none;
+  float: left;
+  width: 305px;
+  padding: 10px,15px;
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid rgb(112, 117, 128);
+}
+.tab_title li.click{
+  background-color: #daebd5;
+  font-weight: bold;
+}
+.tab_content{
+  clear: both;
+  border: 1px solid rgb(112, 117, 128);
+  height: 130px;
+  background-color: #ecdcdc;
+  }
+.tab_content div{
+  display: none;
+  text-align: center;
+}
+.tab_content div.click{
+  display: block;
+} */
