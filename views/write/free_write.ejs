@@ -1,0 +1,82 @@
+<% include ../include/header %>
+  <div class="progress">
+    <div id="navPersent" class="progress-bar bg-info" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+      style="width: 0%; ">0%</div>
+  </div>
+  <section>
+    <div class="secondSectionHeader">
+      <h1 id="info_Header" class="text-center">작성하기</h1>
+  </section>
+  <div id="info_smallHeader">
+  <article>
+		<div class="container" role="main">
+			<form method="post" action="/free/write" onsubmit="return WriteSummit()">
+				<div class="mb-3">
+					<label for="title">제목</label>
+					<input type="text" class="form-control" name="title" id="title" placeholder="제목을 입력해 주세요" required>
+				</div>
+				<div class="mb-3">
+					<label for="reg_id">작성자</label>
+					<input type="text" class="form-control" name="name" id="name" placeholder="이름을 입력해 주세요" required>
+				</div>
+				<div class="mb-3">
+					<label for="content">내용</label>
+					<textarea class="form-control" rows="5" name="content" id="content" placeholder="내용을 입력해 주세요" required></textarea>
+				</div>
+				<div class="mb-3">
+					<label for="tag">비밀번호</label>
+					<input type="password" class="form-control" name="passwd" id="passwd" placeholder="비밀번호를 입력해 주세요" required>
+				</div>
+				<button type="submit" class="btn btn-outline-secondary" id="btnSave">저장</button>
+				<a href="/free/1" class="btn btn-outline-secondary" id="btnList">목록</a>
+			</form>
+		</div>
+	</article>
+</div>
+  <script>
+
+    $('#info_Header').css("opacity", "0");
+    $('#info_smallHeader').css("opacity", "0");
+    $('#info_content').css("opacity", "0");
+    $(document).ready(function () {
+      $('#info_Header').animate({ opacity: "1" }, 350, function () {
+        $('#info_smallHeader').animate({ opacity: "1" }, 350, function () {
+          $('#info_content').animate({ opacity: "1" }, 350);
+        });
+      });
+    })
+
+    function onWriteSubmit(){
+        if ( $("#title").val().trim() == "" ){
+            var message = "제목을 입력해 주세요";
+            $("#title").val("");
+            $("#title").focus();
+            alert(message);
+            return false;
+        }
+        if ( $("#name").val().trim() == "" ){
+            var message = "아이디를 입력해 주세요";
+            $("#name").val("");
+            $("#name").focus();
+            alert(message);
+            return false;
+        }
+        if ( $("#content").val().trim() == "" ){
+            var message = "본문 내용을 입력해 주세요";
+            $("#content").val("");
+            $("#content").focus();
+            alert(message);
+            return false;
+        }
+        if ( $("#passwd").val().trim() == "" ){
+            var message = "패스워드를 입력해 주세요";
+            $("#passwd").val("");
+            $("#passwd").focus();
+            alert(message);
+            return false;
+        }
+    }
+  </script>
+  <br>
+  <br>
+  <% include ../include/footer %>
