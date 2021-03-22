@@ -19,7 +19,6 @@ section{
 section{
   margin-top:4.5rem
 }
-
 .tab_container{
   margin: 20pxs auto;
   position:relative;
@@ -52,4 +51,3 @@ section{
 .tab_content div.click{
   display: block;
 }
-
