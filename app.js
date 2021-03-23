@@ -11,7 +11,12 @@ var usersRouter = require('./routes/users');
 var informationRouter = require('./routes/info');
 var membersRouter = require('./routes/members');
 var loginRouter = require('./routes/login');
-var boardRouter = require('./routes/board');
+var freeRouter = require('./routes/board/free_board');
+var qnaRouter = require('./routes/board/qna_board');
+var emailRouter = require('./routes/board/email_board');
+var noticeRouter = require('./routes/board/notice_board');
+
+
 var app = express();
 
 //Session
@@ -36,7 +41,11 @@ app.use('/users', usersRouter);
 app.use('/information', informationRouter);
 app.use('/members', membersRouter);
 app.use('/login', loginRouter);
-app.use('/board',boardRouter);
+app.use('/free', freeRouter);
+app.use('/qna', qnaRouter);
+app.use('/email', emailRouter);
+app.use('/notice', noticeRouter);
+
 
 //HELMET
 app.use(helmet());
