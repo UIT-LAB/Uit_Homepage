@@ -24,7 +24,7 @@
                     style="border-right: none; border-left: none; border-top: none;; border-bottom: none; width: 100%;">Email
                     Board</a>
             </div>
-            <div class="right container">
+            <div class="right table-responsive mr-3">
                 <table class="table table-hover">
                     <thead>
                         <tr class="tb_color">
@@ -48,7 +48,7 @@
                             %>
                             <tr>
                                 <td style="text-align: center; border-left: 2px solid #ffffff; border-right: none;">
-                                    <%= i+1%>
+                                    <%= data.uid%>
                                 </td>
                                 <td style="text-align: center; border-left: none; border-right: none;">
                                     <%= data.title%>
@@ -63,6 +63,8 @@
                             <%} }%>
                     </tbody>
                 </table>
+                <div class="mx-auto" style="text-align: right;"><a href="/notice/write" type="button" class="btn btn-outline-secondary">작성하기</a></div>
+                <br>
                 <div class="mx-auto" style="text-align: center;">
                     <div class="btn-group">
                         <% for(var j=0;j<rows.length/page_num;j++){%>

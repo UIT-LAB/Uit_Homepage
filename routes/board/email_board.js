@@ -8,7 +8,7 @@ router.get('/write', function(req,res,next){
 });
 router.get('/:page', function(req, res, next) {
     var page = req.params.page;
-    var sql_db = "select uid, title, name, date_format(regdate,'%Y-%m-%d') regdate from emailBoard";
+    var sql_db = "select uid, title, name, date_format(regdate,'%Y-%m-%d') regdate from emailBoard thesis ORDER BY uid DESC";
     db.query(sql_db,function(err,rows){
         if(err) console.error("err : " + err);
         res.render('board/board_Email',{title: '이메일게시판', user_id:req.session.user_id,rows:rows,page:page,length:rows.length-1,page_num:5,pass:true});
@@ -25,7 +25,7 @@ router.post('/write', function(req,res){
     var sql = "insert into emailBoard(title,name,content,regdate, passwd) values(?,?,?,now(),?)";
     db.query(sql,datas,function(err,row){
         if(err) console.error("err : " + err);
-        res.redirect('/email')
+        res.redirect('/email/1')
     })
 });
 module.exports = router;

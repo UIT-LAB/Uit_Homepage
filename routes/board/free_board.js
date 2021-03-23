@@ -7,7 +7,7 @@ router.get('/write', function(req,res,next){
 });
 router.get('/:page', function(req, res, next) {
     var page = req.params.page;
-    var sql_db = "select uid, title, name, date_format(regdate,'%Y-%m-%d') regdate from freeBoard";
+    var sql_db = "select uid, title, name, date_format(regdate,'%Y-%m-%d') regdate from freeBoard thesis ORDER BY uid DESC";
     db.query(sql_db,function(err,rows){
         if(err) console.error("err : " + err);
         res.render('board/board_Free',{title: '자유게시판', user_id:req.session.user_id,rows:rows,page:page,length:rows.length-1,page_num:5,pass:true});

@@ -1,9 +1,13 @@
 var express = require('express');
+const db = require('../config/db');
 var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { user_id: req.session.user_id });
-  //res.render('index', { title: 'Express' });
+  var sql = 'select title from noticeBoard thesis ORDER BY uid DESC LIMIT 3;select title from freeBoard thesis ORDER BY uid DESC LIMIT 3;select title from qnaBoard thesis ORDER BY uid DESC LIMIT 3';
+  db.query(sql,function(err,rows){
+    console.log('rows',rows);
+    res.render('index', { rows: rows, user_id:req.session.user_id});
+  });
 });
 module.exports = router;

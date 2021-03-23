@@ -65,6 +65,10 @@
         </li>
       </ul>
       <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <% for(var i=0;i<rows[0].length;i++){ var data=rows[0][i] %>
+            <li><%= data.title%></li>
+            <%}%>
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
@@ -84,6 +88,15 @@
 
       <!-- test-->
         </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <% for(var i=0;i<rows[1].length;i++){ var data=rows[1][i] %>
+            <li><%= data.title%></li><%}%>
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <% for(var i=0;i<rows[2].length;i++){ var data=rows[2][i] %>
+            <li><%= data.title%></li><%}%>
+        </div>
+      </div>
         어서와라..<%=user_id%>...<br>
         asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>
         asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>
@@ -93,7 +106,6 @@
         asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>
         asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>
         asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>
-      </div>
   </section>
   <script>
     $(document).on('click', '[data-toggle="lightbox"]', function(event) {

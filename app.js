@@ -16,7 +16,6 @@ var qnaRouter = require('./routes/board/qna_board');
 var emailRouter = require('./routes/board/email_board');
 var noticeRouter = require('./routes/board/notice_board');
 
-
 var app = express();
 
 //Session
@@ -45,8 +44,6 @@ app.use('/free', freeRouter);
 app.use('/qna', qnaRouter);
 app.use('/email', emailRouter);
 app.use('/notice', noticeRouter);
-
-
 //HELMET
 app.use(helmet());
 app.disable('x-powered-by')

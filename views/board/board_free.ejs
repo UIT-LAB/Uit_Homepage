@@ -10,7 +10,7 @@
     </section>
     <section>
         <div class="font_info">
-            <div class="col-2 mx-left btn-group-vertical left" style="width: 100%;">
+            <div class="col-2 mx-left btn-group-vertical left container" style="width: 100%;">
                 <a href="/notice/1" class="btn btn-outline-secondary" type="button"
                     style="border-right: none; border-left: none; border-top: none;; border-bottom: none; width: 100%;">Notice
                     Board</a>
@@ -24,7 +24,7 @@
                     style="border-right: none; border-left: none; border-top: none;; border-bottom: none; width: 100%;">Email
                     Board</a>
             </div>
-            <div class="right container">
+            <div class="right table-responsive mr-3">
                 <table class="table table-hover">
                     <thead>
                         <tr class="tb_color">
@@ -48,7 +48,7 @@
                             %>
                             <tr>
                                 <td style="text-align: center; border-left: 2px solid #ffffff; border-right: none;">
-                                    <%= i+1%>
+                                    <%= data.uid%>
                                 </td>
                                 <td style="text-align: center; border-left: none; border-right: none;">
                                     <%= data.title%>

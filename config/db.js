@@ -7,6 +7,7 @@ const db = mysql.createConnection({
   user: process.env.DBuserid,
   password: process.env.DBuserpw,
   database: process.env.DBname,
+  multipleStatements: true
 })
 
 handleDisconnect(db);
@@ -20,7 +21,7 @@ function handleDisconnect(client){
 
         db = mysql.createConnection(client.config);
         handleDisconnect(db);
-        db.connect();
+        db.connection.connect();
     });
 };
 module.exports =  db;
