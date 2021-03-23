@@ -19,11 +19,24 @@ section{
 section{
   margin-top:4.5rem
 }
-#font_header{
-  font-family: 'Gaegu', cursive;
-  font-size: 64;
+<<<<<<< HEAD
+.col-lg-4{
+=======
+.tab_container{
+  margin: 20pxs auto;
+>>>>>>> 682e9b602a736ea2dd15f6d98c1a7d4d8e2b79ef
+  position:relative;
+  padding: 15px;
+  min-height: 2px;
 }
-#font_info{
-  font-family: 'Gaegu', cursive;
-  font-size: 32;
+.container{
+  padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 682e9b602a736ea2dd15f6d98c1a7d4d8e2b79ef

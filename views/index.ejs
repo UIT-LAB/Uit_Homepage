@@ -40,18 +40,19 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
-      <div class="m-4">
-        <h1 class="secondSectionHeader text-center">UIT LAB</h1>
-        <div class="jumbotron">
-          <h1 class="display-4">UIT RAB에 오신 것을 환영합니다!</h1>
-          <p class="lead">저희 랩실을 소개하기 위한 홈페이지 입니다</p>
-          <hr class="my-4">
-          <p>저희 멤버들을 소개합니다!</p>
-          <p class="lead">
-            <a class="btn btn-primary btn-lg" href="/members" role="button">클릭하기</a>
-          </p>
-        </div>
       </div>
+      <div class="container">
+        <div class="m-4">
+          <h1 class="secondSectionHeader text-center">UIT LAB</h1>
+          <div class="jumbotron">
+            <h1 class="display-4">UIT RAB에 오신 것을 환영합니다!</h1>
+            <p class="lead">저희 랩실을 소개하기 위한 홈페이지 입니다</p>
+            <hr class="my-4">
+            <p>저희 멤버들을 소개합니다!</p>
+            <p class="lead">
+              <a class="btn btn-primary btn-lg" href="/members" role="button">클릭하기</a>
+            </p>
+          </div>
       <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
           <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">공지사항</button>
@@ -68,6 +69,24 @@
           <% for(var i=0;i<rows[0].length;i++){ var data=rows[0][i] %>
             <li><%= data.title%></li>
             <%}%>
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">...</div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">...</div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+      </div>
+      <div class= "row">
+      <div class="col-lg-4">  
+        <img src="./images/ind1.jpg" width="300px" height="300px" alt="..." data-toggle= "lightbox" data-title="소개"class="img-responsive rounded-circle">
+      </div>
+      <div class ="col-lg-4">
+        <img src="./images/ind2.jpg" width="300px" height="300px" alt="..." data-toggle= "lightbox" data-title="지금까지"class="img-responsive rounded-circle">
+      </div>
+      <div class ="col-lg-4">
+        <img src="./images/ind3.jpg" width="300px" height="300px" alt="..." data-toggle= "lightbox" data-title="앞으로"class="img-responsive rounded-circle">
+      </div>
+    </div>
+  </div>
+
+      <!-- test-->
         </div>
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
           <% for(var i=0;i<rows[1].length;i++){ var data=rows[1][i] %>
@@ -88,4 +107,11 @@
         asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>
         asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>
   </section>
+  <script>
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
+    </script>
+    
 <%- include('include/footer') %>
