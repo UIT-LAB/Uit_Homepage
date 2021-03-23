@@ -15,7 +15,7 @@ var freeRouter = require('./routes/board/free_board');
 var qnaRouter = require('./routes/board/qna_board');
 var emailRouter = require('./routes/board/email_board');
 var noticeRouter = require('./routes/board/notice_board');
-var freeWriteRouter = require('./routes/write/free_write');
+
 
 var app = express();
 
@@ -45,7 +45,7 @@ app.use('/free', freeRouter);
 app.use('/qna', qnaRouter);
 app.use('/email', emailRouter);
 app.use('/notice', noticeRouter);
-app.use('/freeWrite',freeWriteRouter);
+
 
 //HELMET
 app.use(helmet());
