@@ -52,15 +52,32 @@
           </p>
         </div>
       </div>
-      <div class ="tab_container">
-        <ul class ="tab_title">
-          <li class="click">공지사항</li>
-          <li>갤러리</li>
-        </ul>
-        <div class="tab_content" style= "width: 677px;">
-          <div class="click">공지사항-란</div>
-          <div>갤러리-란</div>
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">공지사항</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">자유게시판</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">QnA</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+          <% for(var i=0;i<rows[0].length;i++){ var data=rows[0][i] %>
+            <li><%= data.title%></li>
+            <%}%>
         </div>
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+          <% for(var i=0;i<rows[1].length;i++){ var data=rows[1][i] %>
+            <li><%= data.title%></li><%}%>
+        </div>
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <% for(var i=0;i<rows[2].length;i++){ var data=rows[2][i] %>
+            <li><%= data.title%></li><%}%>
+        </div>
+      </div>
         어서와라..<%=user_id%>...<br>
         asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>
         asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>
@@ -70,6 +87,5 @@
         asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>
         asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>
         asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>
-      </div>
   </section>
 <%- include('include/footer') %>
