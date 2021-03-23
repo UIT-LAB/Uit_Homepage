@@ -19,37 +19,16 @@ section{
 section{
   margin-top:4.5rem
 }
-
-.tab_container{
-  margin: 20pxs auto;
+.col-lg-4{
   position:relative;
-  
+  padding: 15px;
+  min-height: 2px;
 }
-.tab_title li{
-  list-style: none;
-  float: left;
-  width: 305px;
-  padding: 10px,15px;
-  cursor: pointer;
-  text-align: center;
-  border: 1px solid rgb(112, 117, 128);
+.container{
+  padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
 }
-.tab_title li.click{
-  background-color: #daebd5;
-  font-weight: bold;
-}
-.tab_content{
-  clear: both;
-  border: 1px solid rgb(112, 117, 128);
-  width: 654px;
-  height: 160px;
-  background-color: #ecdcdc;
-  }
-.tab_content div{
-  display: none;
-  text-align: center;
-}
-.tab_content div.click{
-  display: block;
-}
+
 
