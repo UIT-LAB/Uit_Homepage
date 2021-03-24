@@ -1,61 +1,18 @@
 <%- include('include/header') %>
-  <style>
-    @media (min-width: 992px) {
-      .carousel-inner {
-        width: 989px;
-        text-align: center;
-      }
 
-      #mainImages {
-        background-color: rgb(63, 63, 63)
-      }
-    }
-  </style>
-  <section>
-    <div id="mainImages" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#mainImages" data-slide-to="0" class="active"></li>
-        <li data-target="#mainImages" data-slide-to="1"></li>
-      </ol>
-      <div class="carousel-inner mx-auto">
-        <div class="carousel-item active">
-          <img src="./images/bg1.jpg" class="d-block w-100" style="height:50vh">
-          <div class="carousel-caption d-none d-md-block bg-secondary">
-            <!-- mix-blend-mode: difference style..! -->
-            <h5>넥슨 컴퓨터 박물관에 갔었읍니다..</h5>
-            <p>넥슨이 최고야!</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="./images/bg2.jpg" class="d-block w-100" style="height:50vh">
-          <div class="carousel-caption d-none d-md-block bg-secondary">
-            <h5>다음 여행지는 저기다 ㅋㅋ</h5>
-            <p>저런곳도 가봐야되지 않겠습니까? </p>
-          </div>
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#mainImages" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#mainImages" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+<div class = "container">
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="./images/mainimg.jpg" class="d-block w-100" alt="...">
     </div>
-    </div>
+  </div>
+</div>
+</div>
+    <hr /> 
     <div class="container">
-      <div class="m-4">
-        <h1 class="secondSectionHeader text-center">UIT LAB</h1>
-        <div class="jumbotron">
-          <h1 class="display-4">UIT RAB에 오신 것을 환영합니다!</h1>
-          <p class="lead">저희 랩실을 소개하기 위한 홈페이지 입니다</p>
-          <hr class="my-4">
-          <p>저희 멤버들을 소개합니다!</p>
-          <p class="lead">
-            <a class="btn btn-primary btn-lg" href="/members" role="button">클릭하기</a>
-          </p>
-        </div>
+        <div class="row">
+          <div class="col-7">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
@@ -92,43 +49,49 @@
               </li>
               <%}%>
           </div>
-          <!--git test-->
+          
+        </div>
 
-          <!--git test-->
-        </div>
-        <div class="row">
-          <div class="col-lg-4">
-            <img src="./images/ind1.jpg" width="300px" height="300px" alt="..." data-toggle="lightbox" data-title="소개"
-              class="img-responsive rounded-circle">
-          </div>
-          <div class="col-lg-4">
-            <img src="./images/ind2.jpg" width="300px" height="300px" alt="..." data-toggle="lightbox" data-title="지금까지"
-              class="img-responsive rounded-circle">
-          </div>
-          <div class="col-lg-4">
-            <img src="./images/ind3.jpg" width="300px" height="300px" alt="..." data-toggle="lightbox" data-title="앞으로"
-              class="img-responsive rounded-circle">
-          </div>
-        </div>
       </div>
-<!-- test--><!-- test-->
-      <!-- test-->
+          <div class="col-5">
+            <img src="./images/ind1.jpg" alt="" width="100%">
+          </div>
+      </div>
+  <hr />
+    <div class="row">
+      <div class="col-5">
+        <img src="./images/ind2.jpg" alt=""width= "100%">
+      </div>
+      <div class="col-7">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"style="border-top: none;border-left: none;border-bottom: none;border-right: none;">학번</th>
+              <th scope="col"style="border-top: none;border-left: none;border-bottom: none;border-right: none;">이름</th>
+              <th scope="col"style="border-top: none;border-left: none;border-bottom: none;border-right: none;">사는곳</th>
+              <th scope="col"style="border-top: none;border-left: none;border-bottom: none;border-right: none;">분야</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for(var i=0;i<rows[3].length;i++){ var data = rows[3][i] %>
+              <tr>
+                <th scope="row"style="border-top: none;border-left: none;border-bottom: none;border-right: none;"><%= data.snum%></th>
+                <td style="border-top: none;border-left: none;border-bottom: none;border-right: none;"><%= data.name%></td>
+                <td style="border-top: none;border-left: none;border-bottom: none;border-right: none;"><%= data.address%></td>
+                <td style="border-top: none;border-left: none;border-bottom: none;border-right: none;"><%= data.field%></td>
+              </tr>
+              <%}%>
+          </tbody>
+        </table>
+      </div>
     </div>
-    어서와라..<%=user_id%>...<br>
-      asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>
-      asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>
-      asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>
-      asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>
-      asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>
-      asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>
-      asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>
-      asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>asdfasdf<br>
-  </section>
-  <script>
-    $(document).on('click', '[data-toggle="lightbox"]', function (event) {
-      event.preventDefault();
-      $(this).ekkoLightbox();
-    });
-  </script>
+  <hr />
+    <div class="row">
+      <div class="col-7"></div>
+      <div class="col-5">
+        <img src="./images/ind3.jpg" alt="" width="100%">
+      </div>
+    </div>
+  </div>
 
-  <%- include('include/footer') %>
+<%- include('include/footer') %>
