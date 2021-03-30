@@ -4,7 +4,7 @@ var router = express.Router();
 
 
 router.get('/write', function(req,res,next){
-    res.render('write/qna_write',{user_id: req.session.user_id});
+    res.render('write/qna_write',{user_id: req.session.user_id, user_email: req.session.user_email});
 });
 router.get('/:page', function(req, res, next) {
     var page = req.params.page;
@@ -12,6 +12,7 @@ router.get('/:page', function(req, res, next) {
     db.query(sql_db,function(err,rows){
         if(err) console.error("err : " + err);
         res.render('board/board_QnA',{title: 'QnA게시판', user_id:req.session.user_id,rows:rows,page:page,length:rows.length-1,page_num:5,pass:true});
+        console.log(rows.length/5);
         console.log(rows.length-1);
     })
 });

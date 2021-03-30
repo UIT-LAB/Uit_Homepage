@@ -14,15 +14,17 @@ router.post('/', function (req, res, next) {
     var hasher = bkfd2Password();
 
     db.query(`select * from user where id="${req.body.id}"`, function (error, db_value) {
+
+        console.log(db_value )
         if (error) {
             throw error;
         }
         try{
-            console.log(req.session.user_uid )
             if (db_value[0].id === req.body.id) {
                 hasher({ password: req.body.pw, salt: db_value[0].salt }, (err, pass, salt, hash) => {
                     if (hash === db_value[0].pw) {
-                        req.session.user_id = db_value[0].id;
+                        req.session.user_id = db_value[0].name;
+                        req.session.user_email = db_value[0].email;
                         res.redirect('/');
                     }else{
                         res.send('<script> alert("비밀번호를 확인하세요!"); location.href="/login" </script>');

@@ -9,7 +9,7 @@
         
       <div class="modal-header">
           <!-- Title -->
-          <h5 class="modal-title" id="exampleModalLabel"> Log In </h5>
+          <h5 class="modal-title" id="exampleModalLabel"> Sign Up </h5>
   
           <!-- X키 -->
           <button type="button" class="close" onclick="location.href='/'" >
@@ -20,22 +20,14 @@
       <div class="fadeIn first">
         <img src="/images/UIT_LOGO.png" id="icon" alt="User Icon" />
       </div>
-  
       <!-- Login Form -->
       <form method="POST">
-        <input type="text" id="login" class="fadeIn second" name="id" placeholder="ID">
-        <input type="password" id="password" class="fadeIn third" name="pw" placeholder="password">
-        <input type="submit" class="fadeIn fourth" value="Log In">
+        <input type="text" id="name" class="fadeIn first" name="name" placeholder="이름">
+        <input type="text" id="email" class="fadeIn second" name="email" placeholder="아이디">
+        <input type="password" id="password" class="fadeIn third" name="pw" placeholder="비밀번호">
+        <input type="submit" class="fadeIn fourth" value="회원가입">
       </form>
-      
-      <!-- Remind Passowrd -->
-      <div id="formFooter row">
-        <!-- <a class="underlineHover" href="/login/signup">JOIN to UIT-LAB</a><br> -->
-        <a class="underlineHover col-5" href="#" onclick="alert('그럼 DB를 확인해 멍청아..')">비밀번호 찾기</a>
-        <a class="underlineHover col-5" href="/signup">회원가입</a>
-      </div>
-  
     </div>
   </div>
 </html>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
+
