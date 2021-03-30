@@ -4,7 +4,8 @@ var router = express.Router();
 
 
 router.get('/write', function(req,res,next){
-    res.render('write/email_write',{user_id: req.session.user_id});
+    res.render('write/email_write',{user_id: req.session.user_id, user_email: req.session.user_email});
+    console.log(req.session.user_email);
 });
 router.get('/:page', function(req, res, next) {
     var page = req.params.page;

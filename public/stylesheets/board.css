@@ -13,22 +13,3 @@
     border-right: 2px solid #ffffff;
     border-left: 2px solid #ffffff;
 }
-.row_size{
-    width: 100%;
-    display: flex;
-  }
-  .left {
-    width: 20%;
-    height: 100%;
-    float: left;
-    box-sizing: border-box;
-  }
-  .right {
-    width: 80%;
-    height: 100%;
-    float: right;
-    box-sizing: border-box;
-  }
-  .board_container{
-    width: 100%;
-  }

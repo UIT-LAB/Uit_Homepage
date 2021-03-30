@@ -1,103 +1,125 @@
 <% include ../include/header %>
-<section>
-    <div class="secondSectionHeader">
-        <h1 id="info_Header" class="text-center">UIT - LAB</h1>
-        <h5 id="info_smallHeader" class="text-center">자유로운 연구실</h5>
-    </div>
+    <section>
+        <div class="secondSectionHeader">
+            <h1 id="info_Header" class="text-center">UIT - LAB</h1>
+            <h5 id="info_smallHeader" class="text-center">자유로운 연구실</h5>
+        </div>
 
-    <div id="info_content" class="m-4">
-        <div class="container marketing">
-            <!-- Three columns of text below the carousel -->
-            <div class="row row-cols-1 row-cols-md-2">
-                <%for (key in member) {%>
-                <div class="col-lg-4 text-center mb-3 ">
-                    <img id="img_area" src="images/members/<%=member[key].image%>" width="180" height="180" class="rounded-circle">
-                    <h2><%=member[key].name%></h2>
-                    <p>담당분야 : <%=member[key].field%></p>
-                    <button id="<%=member[key].uid%>" type="button" class="btn btn-secondary" data-toggle="modal"
-                        data-target="#detail_<%=member[key].uid%>">
-                        Detail >>
-                    </button>
+        <div id="info_content" class="m-4">
+            <div class="container marketing">
+                <!-- Three columns of text below the carousel -->
+                <div class="row row-cols-1 row-cols-md-2">
+                    <%for (key in member) {%>
+                        <div class="col-lg-4 text-center mb-3 ">
+                            <img id="img_area" src="images/members/<%=member[key].image%>" width="180" height="180"
+                                class="rounded-circle">
+                            <h2>
+                                <%=member[key].name%>
+                            </h2>
+                            <p>담당분야 : <%=member[key].field%>
+                            </p>
+                            <button id="<%=member[key].uid%>" type="button" class="btn btn-secondary"
+                                data-toggle="modal" data-target="#detail_<%=member[key].uid%>">
+                                Detail >>
+                            </button>
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="detail_<%=member[key].uid%>" tabindex="-1" role="dialog"
-                        aria-labelledby="detail_<%=member[key].uid%>" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <!-- Title -->
-                                    <h5 class="modal-title" id="exampleModalLabel"> <%=member[key].name%>'s Detail </h5>
+                            <!-- Modal -->
+                            <div class="modal fade" id="detail_<%=member[key].uid%>" tabindex="-1" role="dialog"
+                                aria-labelledby="detail_<%=member[key].uid%>" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <!-- Title -->
+                                            <h5 class="modal-title" id="exampleModalLabel">
+                                                <%=member[key].name%>'s Detail
+                                            </h5>
 
-                                    <!-- X키 -->
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body ">
-                                    <img src="images/members/<%=member[key].image%>" width="180" height="180"
-                                        class="rounded-circle mb-3">
-                                    <table class="table table-hover" style="width: 100%">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col" style="width: 20%">이름</th>
-                                                <th scope="col" ><%=member[key].name%></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody >
-                                            <tr>
-                                                <th scope="row">학번</th>
-                                                <td><%=member[key].snum%></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">담당 분야</th>
-                                                <td><%=member[key].field%></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">거주지</th>
-                                                <td><%=member[key].address%></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">입랩날짜</th>
-                                                <td><%=moment(member[key].come).format('YYYY-MM-DD')%></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">졸업날짜</th>
-                                                <td><%=moment(member[key].graduate).format('YYYY-MM-DD')%></td>
-                                            </tr>
-                                            <tr>
-                                                <th scope="row">한 마디<br>짓껄이기</th>
-                                                <td><%=member[key].note%></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <!-- X키 -->
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body ">
+                                            <img src="images/members/<%=member[key].image%>" width="180" height="180"
+                                                class="rounded-circle mb-3">
+                                            <table class="table table-hover" style="width: 100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col" style="width: 20%">이름</th>
+                                                        <th scope="col">
+                                                            <%=member[key].name%>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">학번</th>
+                                                        <td>
+                                                            <%=member[key].snum%>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">담당 분야</th>
+                                                        <td>
+                                                            <%=member[key].field%>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">거주지</th>
+                                                        <td>
+                                                            <%=member[key].address%>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">입랩날짜</th>
+                                                        <td>
+                                                            <%=moment(member[key].come).format('YYYY-MM-DD')%>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">졸업날짜</th>
+                                                        <td>
+                                                            <%=moment(member[key].graduate).format('YYYY-MM-DD')%>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">한 마디<br>짓껄이기</th>
+                                                        <td>
+                                                            <%=member[key].note%>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        <%}%>
                 </div>
-                <%}%>
             </div>
-        </div>
-        <hr>
-        <div class="secondSectionHeader">
-            <h1 id="info_Header" class="text-center">(구) UIT - LAB</h1>
-            <h5 id="info_smallHeader" class="text-center">이제는 존재하지 않는 분...</h5>
-        </div>
-</section>
-<script>
+            <hr>
+            <div class="secondSectionHeader">
+                <h1 id="info_Header" class="text-center">(구) UIT - LAB</h1>
+                <h5 id="info_smallHeader" class="text-center">이제는 존재하지 않는 분...</h5>
+            </div>
+            </div>
+    </section>
+    <script>
 
-    $('#info_Header').css("opacity", "0" );
-    $('#info_smallHeader').css("opacity", "0" );
-    $('#info_content').css("opacity", "0" );
-    $(document).ready(function () {
-        $('#info_Header').animate({ opacity: "1" }, 350, function(){
-            $('#info_smallHeader').animate({ opacity: "1" }, 350, function(){
-              $('#info_content').animate({ opacity: "1" }, 350);
+        $('#info_Header').css("opacity", "0");
+        $('#info_smallHeader').css("opacity", "0");
+        $('#info_content').css("opacity", "0");
+        $(document).ready(function () {
+            $('#info_Header').animate({ opacity: "1" }, 350, function () {
+                $('#info_smallHeader').animate({ opacity: "1" }, 350, function () {
+                    $('#info_content').animate({ opacity: "1" }, 350);
+                });
             });
-        });
-    })
-</script>
-<% include ../include/footer %>
+        })
+    </script>
+    <% include ../include/footer %>

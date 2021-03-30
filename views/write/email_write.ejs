@@ -17,7 +17,7 @@
 				</div>
 				<div class="mb-3">
 					<label for="reg_id">작성자</label>
-					<input type="text" class="form-control" name="name" id="name" placeholder="이름을 입력해 주세요" required>
+					<input type="text" class="form-control" name="name" id="name" value="<%= user_email%>" readonly>
 				</div>
 				<div class="mb-3">
 					<label for="content">내용</label>
@@ -28,7 +28,7 @@
 					<input type="password" class="form-control" name="passwd" id="passwd" placeholder="비밀번호를 입력해 주세요" required>
 				</div>
 				<button type="submit" class="btn btn-outline-secondary" id="btnSave">저장</button>
-				<a href="/email" class="btn btn-outline-secondary" id="btnList">목록</a>
+				<a href="/email/1" class="btn btn-outline-secondary" id="btnList">목록</a>
 			</form>
 		</div>
 	</article>
