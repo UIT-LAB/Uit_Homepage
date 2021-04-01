@@ -62,12 +62,7 @@
                                 <%} }%>
                         </tbody>
                     </table>
-                    <% if(user_id != undefined){%>
-                    <div class="mx-auto" style="text-align: right;"><a href="/email/write" type="button"
-                            class="btn btn-outline-secondary">작성하기</a></div>
-                    <br>
-                    <%}%>
-                    <div class="mx-auto" style="text-align: center;">
+                    <div class="mx-auto" style="text-align: right;">
                         <div class="btn-group">
                             <% if((rows.length/page_num)>=1){%>
                             <% for(var j=0;j<rows.length/page_num;j++){%>
@@ -76,13 +71,14 @@
                                 </a>
                                 <%}}%>
                         </div>
-                        <br>
-                        <br>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        <% if(user_name != undefined){%>
+        <div class="mx-auto" style="text-align: right;"><a href="/email/write" type="button"
+                class="btn btn-outline-secondary">작성하기</a></div>
+        <%}%>
+         </div>
     
     
     </section>

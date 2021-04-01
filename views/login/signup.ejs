@@ -21,13 +21,46 @@
         <img src="/images/UIT_LOGO.png" id="icon" alt="User Icon" />
       </div>
       <!-- Login Form -->
-      <form method="POST">
+      <form method="POST" onsubmit="return WriteSummit()">
         <input type="text" id="name" class="fadeIn first" name="name" placeholder="이름">
-        <input type="text" id="email" class="fadeIn second" name="email" placeholder="아이디">
-        <input type="password" id="password" class="fadeIn third" name="pw" placeholder="비밀번호">
+        <input type="text" id="email" class="fadeIn second" name="email" placeholder="이메일">
+        <input type="password" id="passwd" class="fadeIn third" name="passwd" placeholder="비밀번호">
+        <input type="password" id="pwdchk" class="fadeIn fourth" name="pwdchk" placeholder="비밀번호확인">
         <input type="submit" class="fadeIn fourth" value="회원가입">
       </form>
     </div>
   </div>
 </html>
+<script>
+      function onWriteSubmit(){
+        if ( $("#name").val().trim() == "" ){
+            var message = "이름을 입력해 주세요";
+            $("#name").val("");
+            $("#name").focus();
+            alert(message);
+            return false;
+        }
+        if ( $("#email").val().trim() == "" ){
+            var message = "이메일을 입력해 주세요";
+            $("#email").val("");
+            $("#email").focus();
+            alert(message);
+            return false;
+        }
+        if ( $("#passwd").val().trim() == "" ){
+            var message = "패스워드를 입력해 주세요";
+            $("#passwd").val("");
+            $("#passwd").focus();
+            alert(message);
+            return false;
+        }
+        if ( $("#pwdchk").val().trim() != $("passwd").val().trim() ){
+            var message = "패스워드를 동일하게 입력해 주세요";
+            $("#pwdchk").val("");
+            $("#pwdchk").focus();
+            alert(message);
+            return false;
+        }
+    }
+</script>
 

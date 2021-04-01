@@ -93,8 +93,12 @@
                     <button class="btn btn-outline-success my-2 my-sm-0 mr-3" type="submit">Search</button>
                 </form> -->
                 
-                <% if(user_id) {%>
-                    <span class="text-light">환영합니다 <%=user_id%>님.</span>
+                <% if(user_name) {%>
+                    <% if(user_name=='admin'){%>
+                    <span class="text-light">환영합니다 관리지님.</span>
+                    <%}else{%>
+                        <span class="text-light">환영합니다 <%=user_name%>님.</span>
+                        <%}%>
                     <button class="btn btn-outline-dark" onclick="location.href='/login/out'">Log Out</button>
                 <%}else{%>
                     <button class="btn btn-outline-dark" onclick="location.href='/login'">Log In</button>

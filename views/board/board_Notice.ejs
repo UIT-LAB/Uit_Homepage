@@ -61,11 +61,6 @@
                                 <%} }%>
                         </tbody>
                     </table>
-                    <% if(user_id=='admin'){ %>
-                   <div class="mx-auto" style="text-align: right;"><a href="/notice/write" type="button"
-                            class="btn btn-outline-secondary">작성하기</a></div>
-                    <br>
-                    <% }%>
                     <div class="mx-auto" style="text-align: center;">
                         <div class="btn-group">
                             <% if((rows.length/page_num)>=1){%>
@@ -75,11 +70,13 @@
                                 </a>
                                 <%}}%>
                         </div>
-                        <br>
-                        <br>
                     </div>
                 </div>
             </div>
+            <% if(user_name=='admin'){ %>
+           <div class="mx-auto" style="text-align: right;"><a href="/notice/write" type="button"
+                    class="btn btn-outline-secondary">작성하기</a></div>
+            <% }%>
         </div>
     </section>
     <script>
