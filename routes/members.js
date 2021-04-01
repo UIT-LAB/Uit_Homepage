@@ -10,7 +10,7 @@ router.get("/", function (req, res, next) {
     if (error) {
       throw error;
     }
-    res.render("members/members_Index", { moment, user_id: req.session.user_id, member: db_value,user_email:req.session.user_email});
+    res.render("members/members_Index", { moment, user_name: req.session.user_name, member: db_value,user_email:req.session.user_email});
   });
 });
 
@@ -20,17 +20,17 @@ router.get("/schedule", function (req, res, next) {
     if (error) {
       throw error;
     }
-    res.render("members/members_Schedule", { moment, user_id: req.session.user_id, schedule_val: db_value ,user_email:req.session.user_email});
+    res.render("members/members_Schedule", { moment, user_name: req.session.user_name, schedule_val: db_value ,user_email:req.session.user_email});
   });
 });
 
 router.get('/task', function (req, res, next) {
-  res.render("members/members_task", { user_id: req.session.user_id ,user_email:req.session.user_email});
+  res.render("members/members_task", { user_name: req.session.user_name ,user_email:req.session.user_email});
 });
 router.get('/pstp/:name', function (req, res, next) {
-  res.render("members/members_pstp", { user_id: req.session.user_id ,user_email:req.session.user_email});
+  res.render("members/members_pstp", { user_name: req.session.user_id ,user_email:req.session.user_email});
 });
 router.get('/timetable', function(req, res, next) {
-  res.render('timetable/timetable_Index', { user_id: req.session.user_id ,user_email:req.session.user_email});
+  res.render('timetable/timetable_Index', { user_name: req.session.user_id ,user_email:req.session.user_email});
 });
 module.exports = router;
