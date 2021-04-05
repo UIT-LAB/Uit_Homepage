@@ -21,7 +21,7 @@
         <img src="/images/UIT_LOGO.png" id="icon" alt="User Icon" />
       </div>
       <!-- Login Form -->
-      <form method="POST" onsubmit="return WriteSummit()">
+      <form method="POST"  onsubmit="return WriteSummit()">
         <input type="text" id="name" class="fadeIn first" name="name" placeholder="이름">
         <input type="text" id="email" class="fadeIn second" name="email" placeholder="이메일">
         <input type="password" id="passwd" class="fadeIn third" name="passwd" placeholder="비밀번호">
@@ -54,7 +54,7 @@
             alert(message);
             return false;
         }
-        if ( $("#pwdchk").val().trim() != $("passwd").val().trim() ){
+        if ( $("#pwdchk").val().trim() != $("#passwd").val().trim() ){
             var message = "패스워드를 동일하게 입력해 주세요";
             $("#pwdchk").val("");
             $("#pwdchk").focus();
